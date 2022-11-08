@@ -1,10 +1,9 @@
-import { useState } from "react";
-import "./App.scss";
+import './App.scss';
 
 function App() {
   return (
-    <div className="App">
-      <div>Learn React</div>
+    <div className="app">
+      <div>Vite React</div>
     </div>
   );
 }
