@@ -10,7 +10,9 @@ function App() {
 
   return (
     <div className="app">
-      <div data-testid="header">{title}</div>
+      <div data-testid="header" className="text-3xl font-bold underline">
+        {title}
+      </div>
       <button type="button" data-testid="clickme" onClick={handleClick}>
         Click Me
       </button>
