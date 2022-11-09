@@ -1,8 +1,22 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/vite react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App Component', () => {
+  test('header should exist', async () => {
+    render(<App />);
+
+    const element = screen.getByTestId('clickme');
+    userEvent.click(element);
+
+    expect(await screen.findByText(/Clicked!!!/i)).toBeInTheDocument();
+  });
+
+  test('click should work', async () => {
+    render(<App />);
+
+    const element = screen.getByTestId('header');
+
+    expect(element).toBeInTheDocument();
+  });
 });
